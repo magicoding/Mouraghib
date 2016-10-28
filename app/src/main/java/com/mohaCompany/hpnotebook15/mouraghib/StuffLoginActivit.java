@@ -50,7 +50,7 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
+            "medhab@bowbe.com:dadou000", "bobs@med.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.

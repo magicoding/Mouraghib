@@ -35,8 +35,14 @@
             android:name=".Parent"
             android:label="@string/title_activity_parent"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Student" />
-        <activity android:name=".Stuff"></activity>
+        <activity
+            android:name=".Student"
+            android:label="@string/title_activity_student"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Stuff"
+            android:label="@string/title_activity_stuff"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

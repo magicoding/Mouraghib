@@ -50,7 +50,7 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "parent1@example.com:parent1", "parent2@example.com:parent2"
+            "cheik@ahmed.com:123456", "med93@bobs.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -335,7 +335,7 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
 
             if (success) {
                 finish();
-                Intent myIntent = new Intent(ParentLoginActivity.this,Student.class);
+                Intent myIntent = new Intent(ParentLoginActivity.this,Parent.class);
                 ParentLoginActivity.this.startActivity(myIntent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
