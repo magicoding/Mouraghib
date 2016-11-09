@@ -50,7 +50,7 @@ public class StudentLoginActivity extends AppCompatActivity implements LoaderCal
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "ouldmedyahya@yahoo.fr:123456", "medyahyahamed@yahoo.ca:123456"
+            "ouldmedyahya@yahoo.fr:123456", "medyahyahamed@yahoo.ca:123456", "test@example.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.

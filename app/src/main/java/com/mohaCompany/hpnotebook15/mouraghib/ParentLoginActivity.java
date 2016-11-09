@@ -50,7 +50,7 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "cheik@ahmed.com:123456", "med93@bobs.com:123456"
+            "cheik@ahmed.com:123456", "med93@bobs.com:123456", "test@example.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -325,7 +325,7 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
             }
 
             // TODO: register the new account here.
-            return true;
+            return false;
         }
 
         @Override
