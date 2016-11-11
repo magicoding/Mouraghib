@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "251000163309",
+    "firebase_url": "https://ecellence-et-reuissite.firebaseio.com",
+    "project_id": "ecellence-et-reuissite",
+    "storage_bucket": "ecellence-et-reuissite.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251000163309:android:3f74d46adf543e3b",
+        "android_client_info": {
+          "package_name": "com.mohaCompany.hpnotebook15.mouraghib"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251000163309-jlfm6mi81tgrutjjo4qkkqv463km09cj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYzDLhfZfHER9LbcC9jcCnYqCcK-xp1KI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
