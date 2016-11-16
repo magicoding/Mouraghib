@@ -17,7 +17,7 @@ public class MainScreen extends AppCompatActivity {
         startActivity(intent);
     }
     public void generalInfo(View view) {
-        Intent intent = new Intent(this,publicInfo.class);
+        Intent intent = new Intent(this,GeneralInfo.class);
         startActivity(intent);
     }
 }
