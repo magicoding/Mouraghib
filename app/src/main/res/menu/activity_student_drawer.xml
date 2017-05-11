@@ -10,7 +10,7 @@
             android:id="@+id/nav_gallery"
             android:title="Courses" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_slides"
             android:title="Social life" />
         <item
             android:id="@+id/nav_manage"

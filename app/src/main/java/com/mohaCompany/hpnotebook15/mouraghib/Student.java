@@ -1,5 +1,6 @@
 package com.mohaCompany.hpnotebook15.mouraghib;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,13 +14,34 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Student extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    //firebase auth object
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        //if the user is not logged in
+        //that means current user will return null
+        if(firebaseAuth.getCurrentUser() == null){
+            //closing this activity
+            finish();
+            //starting login activity
+            startActivity(new Intent(this, StudentLoginActivity.class));
+        }
+
+        //getting current user
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -85,6 +107,7 @@ public class Student extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
+
 
         } else if (id == R.id.nav_manage) {
 

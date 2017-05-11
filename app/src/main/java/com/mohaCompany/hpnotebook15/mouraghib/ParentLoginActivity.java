@@ -30,6 +30,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +55,7 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "cheik@ahmed.com:123456", "med93@bobs.com:123456", "test@example.com:123456"
+            //"cheik@ahmed.com:123456", "med93@bobs.com:123456", "test@example.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -63,10 +68,15 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
     private View mProgressView;
     private View mLoginFormView;
 
+    private FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_login);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -186,8 +196,25 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            //progressDialog.dismiss();
+                            //if the task is successfull
+                            if(task.isSuccessful()){
+                                //start the profile activity
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), Student.class));
+                            }else{
+                                finish();
+                            }
+                        }
+                    });
+
+            //mAuthTask = new UserLoginTask(email, password);
+            //mAuthTask.execute((Void) null);
         }
     }
 
