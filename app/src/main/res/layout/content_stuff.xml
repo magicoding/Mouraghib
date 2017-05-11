@@ -14,7 +14,7 @@
     tools:showIn="@layout/app_bar_stuff">
 
     <TextView
-        android:text="Activité des employés"
+        android:text="Employee Activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

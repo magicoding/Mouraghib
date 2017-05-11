@@ -10,7 +10,7 @@
             android:title="General" />
         <item
             android:id="@+id/nav_slideshow"
-            android:title="Emploi du temps" />
+            android:title="Schedule" />
         <item
             android:id="@+id/nav_manage"
             android:title="Suggestions" />

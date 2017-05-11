@@ -11,10 +11,10 @@
             android:title="Courses" />
         <item
             android:id="@+id/nav_slideshow"
-            android:title="Vie social" />
+            android:title="Social life" />
         <item
             android:id="@+id/nav_manage"
-            android:title="Emploi du temp" />
+            android:title="Schedule" />
         <item
             android:id="@+id/nav_send"
             android:title="Suggestions" />

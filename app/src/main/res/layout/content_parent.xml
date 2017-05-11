@@ -14,7 +14,7 @@
     tools:showIn="@layout/app_bar_parent">
 
     <TextView
-        android:text="Activité des parents"
+        android:text="Parent Activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

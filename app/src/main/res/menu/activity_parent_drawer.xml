@@ -10,7 +10,7 @@
             android:title="General" />
         <item
             android:id="@+id/nav_slideshow"
-            android:title="Vie social" />
+            android:title="Social life" />
         <item
             android:id="@+id/nav_manage"
             android:title="Account" />

@@ -13,7 +13,7 @@
     android:background="@android:color/holo_blue_light">
 
     <Button
-        android:text="Etudiant"
+        android:text="Student"
         android:layout_width="match_parent"
         android:layout_marginTop="74dp"
         android:id="@+id/button3"
@@ -34,7 +34,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:text="employé"
+        android:text="employee"
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:id="@+id/button5"
