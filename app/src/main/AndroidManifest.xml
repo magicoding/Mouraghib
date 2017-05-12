@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/excellence_icon"
+        android:icon="@mipmap/app_general_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -24,8 +24,8 @@
         <activity
             android:name=".StudentLoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".publicInfo" />
-        <activity android:name=".Private" />
+        <activity android:name=".Private"
+            android:label="Vous etes?"/>
         <activity
             android:name=".StuffLoginActivit"
             android:label="@string/title_activity_stuff_login" />

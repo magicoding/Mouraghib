@@ -7,7 +7,7 @@ android {
         applicationId "com.mohaCompany.hpnotebook15.mouraghib"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 5
+        versionCode 6
         versionName '3.2'
     }
     buildTypes {
