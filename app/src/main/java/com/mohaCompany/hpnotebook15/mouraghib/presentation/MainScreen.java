@@ -1,9 +1,11 @@
-package com.mohaCompany.hpnotebook15.mouraghib;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.mohaCompany.hpnotebook15.mouraghib.R;
 
 public class MainScreen extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.mohaCompany.hpnotebook15.mouraghib.R;
 
 public class GeneralInfo extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

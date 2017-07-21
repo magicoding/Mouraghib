@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.mohaCompany.hpnotebook15.mouraghib.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -206,7 +207,7 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
                             if(task.isSuccessful()){
                                 //start the profile activity
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), Student.class));
+                                startActivity(new Intent(getApplicationContext(), StudentActivity.class));
                             }else{
                                 finish();
                             }
@@ -361,7 +362,7 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
 
             if (success) {
                 finish();
-                Intent myIntent = new Intent(StuffLoginActivit.this,Stuff.class);
+                Intent myIntent = new Intent(StuffLoginActivit.this,StuffActivity.class);
                 StuffLoginActivit.this.startActivity(myIntent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
