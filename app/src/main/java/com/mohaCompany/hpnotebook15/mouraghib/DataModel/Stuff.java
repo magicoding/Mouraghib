@@ -10,35 +10,11 @@ public class Stuff {
     private int phoneNumber;
     private String email;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Stuff(String name, String profession, int phoneNumber, String email){
         this.name = name;
-    }
-
-    public String getProfession() {
-        return profession;
-    }
-
-    public void setProfession(String profession) {
         this.profession = profession;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
     }
+
 }

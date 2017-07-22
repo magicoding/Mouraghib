@@ -5,31 +5,19 @@ package com.mohaCompany.hpnotebook15.mouraghib.DataModel;
  */
 
 public class Student {
-    private String Name;
+    private String name;
     private int studentNum;
     private int studentLevel;
+    private Parent father;
+    private Parent mother;
 
-    public int getStudentNum() {
-        return studentNum;
-    }
-
-    public void setStudentNum(int studentNum) {
+    public Student(String name, int studentNum, int studentLevel,Parent father, Parent mother){
+        this.name = name;
         this.studentNum = studentNum;
-    }
-
-    public int getStudentLevel() {
-        return studentLevel;
-    }
-
-    public void setStudentLevel(int studentLevel) {
         this.studentLevel = studentLevel;
+        this.father = father;
+        this.mother = mother;
+
     }
 
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
 }

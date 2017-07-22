@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.mohaCompany.hpnotebook15.mouraghib.DataModel.Stuff;
 import com.mohaCompany.hpnotebook15.mouraghib.R;
 
 import java.util.ArrayList;
@@ -207,7 +208,7 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
                             if(task.isSuccessful()){
                                 //start the profile activity
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), StudentActivity.class));
+                                startActivity(new Intent(getApplicationContext(), StuffActivity.class));
                             }else{
                                 finish();
                             }
