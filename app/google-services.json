@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "251000163309-9jn9v8eahltiubunbj5j9eg8k5khmbsg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mohaCompany.hpnotebook15.mouraghib",
+            "certificate_hash": "3584469cf48bf2ace9b120588a70f1e71e27273e"
+          }
+        },
+        {
           "client_id": "251000163309-jlfm6mi81tgrutjjo4qkkqv463km09cj.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251000163309-jlfm6mi81tgrutjjo4qkkqv463km09cj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

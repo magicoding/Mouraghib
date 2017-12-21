@@ -34,6 +34,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mohaCompany.hpnotebook15.mouraghib.DataModel.Parent;
 import com.mohaCompany.hpnotebook15.mouraghib.R;
 
@@ -71,14 +74,15 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
     private View mLoginFormView;
 
     private FirebaseAuth firebaseAuth;
-
+    private DatabaseReference myRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_login);
 
+        //***********FIREBASE VARIABLES*****//
         firebaseAuth = FirebaseAuth.getInstance();
-
+        myRef = FirebaseDatabase.getInstance().getReference();
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -207,6 +211,7 @@ public class ParentLoginActivity extends AppCompatActivity implements LoaderCall
                             //if the task is successfull
                             if(task.isSuccessful()){
                                 //start the profile activity
+
                                 finish();
                                 startActivity(new Intent(getApplicationContext(), ParentActivity.class));
                             }else{

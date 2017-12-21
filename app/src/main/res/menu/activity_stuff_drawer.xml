@@ -3,17 +3,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_notification"
             android:title="Notification" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_general"
             android:title="General" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_schedule"
             android:title="Schedule" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_suggestions"
             android:title="Suggestions" />
+        <item
+            android:id="@+id/nav_addAccount"
+            android:title="Add Account" />
     </group>
 
 </menu>

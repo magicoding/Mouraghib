@@ -24,8 +24,9 @@
         <activity
             android:name=".presentation.StudentLoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".presentation.Private"
-            android:label="Vous etes?"/>
+        <activity
+            android:name=".presentation.Private"
+            android:label="Vous etes?" />
         <activity
             android:name=".presentation.StuffLoginActivit"
             android:label="@string/title_activity_stuff_login" />
@@ -47,6 +48,10 @@
         <activity
             android:name=".presentation.GeneralInfo"
             android:label="@string/title_activity_general_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.AddAccount"
+            android:label="@string/title_activity_add_account"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
