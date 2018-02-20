@@ -1,19 +1,16 @@
 package com.mohaCompany.hpnotebook15.mouraghib.DataModel;
 
-/**
- * Created by HPnotebook15 on 2017-07-21.
- */
 
-public class Student {
-    private String name;
-    private int studentNum;
-    private int studentLevel;
+
+public class Student extends User{
+
+    private YearLevel studentLevel;
     private Parent father;
     private Parent mother;
 
-    public Student(String name, int studentNum, int studentLevel,Parent father, Parent mother){
-        this.name = name;
-        this.studentNum = studentNum;
+    public Student(String name, String email, int phoneNumber,int userID, YearLevel studentLevel,Parent father, Parent mother){
+        super(name,email,phoneNumber,userID);
+
         this.studentLevel = studentLevel;
         this.father = father;
         this.mother = mother;

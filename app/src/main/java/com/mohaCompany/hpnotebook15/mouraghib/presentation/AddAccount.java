@@ -11,6 +11,10 @@ import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mohaCompany.hpnotebook15.mouraghib.DataModel.Student;
+import com.mohaCompany.hpnotebook15.mouraghib.DataModel.Stuff;
+import com.mohaCompany.hpnotebook15.mouraghib.DataModel.User;
+import com.mohaCompany.hpnotebook15.mouraghib.DataModel.YearLevel;
 import com.mohaCompany.hpnotebook15.mouraghib.R;
 
 import java.util.HashMap;
@@ -68,14 +72,14 @@ public class AddAccount extends AppCompatActivity {
         String studNum = this.studNum.getText().toString().trim();
         String studClass = this.studClass.getText().toString().trim();
 
+        User teacher = new Stuff(accName,accEmail,2049309013,Integer.parseInt(studNum),"Math");
+
         HashMap<String,String> dataMap = new HashMap<String, String>();
 
-        dataMap.put("AccountName",accName);
-        dataMap.put("AccountEmail",accEmail);
-        dataMap.put("StudentNum",studNum);
-        dataMap.put("StudentClass",studClass);
+        dataMap.put(""+teacher.getUserID(),accName  );
+        myRef.child("Stuff").child("teachers").setValue(dataMap);
 
-        myRef.child("Students").child("3rd year").setValue(dataMap);
+
 
         finish();
     }
