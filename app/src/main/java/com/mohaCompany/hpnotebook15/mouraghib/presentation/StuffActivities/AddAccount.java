@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib.presentation;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation.StuffActivities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -57,14 +57,6 @@ public class AddAccount extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
     private void startRegister(){
         String accName = this.name.getText().toString().trim();

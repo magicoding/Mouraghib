@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib.presentation;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation.General;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

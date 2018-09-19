@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib.presentation;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation.ParentActivities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -34,7 +34,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.mohaCompany.hpnotebook15.mouraghib.DataModel.Stuff;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mohaCompany.hpnotebook15.mouraghib.R;
 
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class StuffLoginActivit extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class ParentLoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -57,7 +58,7 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "medhab@bowbe.com:dadou000", "bobs@med.com:123456", "test@example.com:123456"
+            //"cheik@ahmed.com:123456", "med93@bobs.com:123456", "test@example.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -71,14 +72,15 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
     private View mLoginFormView;
 
     private FirebaseAuth firebaseAuth;
-
+    private DatabaseReference myRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stuff_login);
+        setContentView(R.layout.activity_parent_login);
 
+        //***********FIREBASE VARIABLES*****//
         firebaseAuth = FirebaseAuth.getInstance();
-
+        myRef = FirebaseDatabase.getInstance().getReference();
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -207,13 +209,15 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
                             //if the task is successfull
                             if(task.isSuccessful()){
                                 //start the profile activity
+
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), StuffActivity.class));
+                                startActivity(new Intent(getApplicationContext(), ParentActivity.class));
                             }else{
                                 finish();
                             }
                         }
                     });
+
             //mAuthTask = new UserLoginTask(email, password);
             //mAuthTask.execute((Void) null);
         }
@@ -302,7 +306,7 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(StuffLoginActivit.this,
+                new ArrayAdapter<>(ParentLoginActivity.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
@@ -363,8 +367,8 @@ public class StuffLoginActivit extends AppCompatActivity implements LoaderCallba
 
             if (success) {
                 finish();
-                Intent myIntent = new Intent(StuffLoginActivit.this,StuffActivity.class);
-                StuffLoginActivit.this.startActivity(myIntent);
+                Intent myIntent = new Intent(ParentLoginActivity.this,ParentActivity.class);
+                ParentLoginActivity.this.startActivity(myIntent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();

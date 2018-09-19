@@ -32,4 +32,13 @@
     <string name="title_activity_stuff">Stuff</string>
     <string name="title_activity_general_info">Excellence et Reussite</string>
     <string name="title_activity_add_account">Add Account</string>
+    <string name="title_activity_notification">Notification</string>
+    <string name="title_activity_parent_notification">ParentNotification</string>
+    <string name="title_activity_stuff_notification">StuffNotification</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_sugesstion">Sugesstion</string>
+    <string name="title_activity_social_life">Social Life</string>
+    <string name="tab_text_1">Events</string>
+    <string name="tab_text_2">Soccer</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

@@ -7,7 +7,7 @@
     android:paddingBottom="10dp"
     android:paddingTop="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mohaCompany.hpnotebook15.mouraghib.presentation.AddAccount"
+    tools:context="com.mohaCompany.hpnotebook15.mouraghib.presentation.StuffActivities.AddAccount"
     tools:showIn="@layout/activity_add_account">
 
     <EditText

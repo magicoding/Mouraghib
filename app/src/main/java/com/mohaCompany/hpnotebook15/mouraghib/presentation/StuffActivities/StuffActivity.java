@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib.presentation;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation.StuffActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mohaCompany.hpnotebook15.mouraghib.R;
+import com.mohaCompany.hpnotebook15.mouraghib.presentation.General.GeneralInfo;
+import com.mohaCompany.hpnotebook15.mouraghib.presentation.General.Sugesstion;
 
 public class StuffActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,14 +28,6 @@ public class StuffActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -85,12 +79,16 @@ public class StuffActivity extends AppCompatActivity
 
         if (id == R.id.nav_notification) {
             // Handle the camera action
+            Intent intent = new Intent(this, StuffNotification.class);
+            startActivity(intent);
         } else if (id == R.id.nav_general) {
-
+            Intent intent = new Intent(this, GeneralInfo.class);
+            startActivity(intent);
         } else if (id == R.id.nav_schedule) {
 
         } else if (id == R.id.nav_suggestions) {
-
+            Intent intent = new Intent(this, Sugesstion.class);
+            startActivity(intent);
         } else if (id == R.id.nav_addAccount) {
             Intent intent = new Intent(this, AddAccount.class);
             startActivity(intent);

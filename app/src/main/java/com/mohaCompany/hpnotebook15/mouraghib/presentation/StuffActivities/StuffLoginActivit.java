@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib.presentation;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation.StuffActivities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -44,7 +44,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class StudentLoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class StuffLoginActivit extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -55,9 +55,8 @@ public class StudentLoginActivity extends AppCompatActivity implements LoaderCal
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
-
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            //"ouldmedyahya@yahoo.fr:123456", "medyahyahamed@yahoo.ca:123456", "test@example.com:123456"
+            "medhab@bowbe.com:dadou000", "bobs@med.com:123456", "test@example.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -75,7 +74,7 @@ public class StudentLoginActivity extends AppCompatActivity implements LoaderCal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_studentlogin);
+        setContentView(R.layout.activity_stuff_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -208,13 +207,12 @@ public class StudentLoginActivity extends AppCompatActivity implements LoaderCal
                             if(task.isSuccessful()){
                                 //start the profile activity
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), StudentActivity.class));
+                                startActivity(new Intent(getApplicationContext(), StuffActivity.class));
                             }else{
                                 finish();
                             }
                         }
                     });
-
             //mAuthTask = new UserLoginTask(email, password);
             //mAuthTask.execute((Void) null);
         }
@@ -303,7 +301,7 @@ public class StudentLoginActivity extends AppCompatActivity implements LoaderCal
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(StudentLoginActivity.this,
+                new ArrayAdapter<>(StuffLoginActivit.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
@@ -364,13 +362,13 @@ public class StudentLoginActivity extends AppCompatActivity implements LoaderCal
 
             if (success) {
                 finish();
-                Intent myIntent = new Intent(StudentLoginActivity.this,StudentActivity.class);
-                StudentLoginActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(StuffLoginActivit.this,StuffActivity.class);
+                StuffLoginActivit.this.startActivity(myIntent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
             }
-        }//open new activity when sign in validate
+        }
 
         @Override
         protected void onCancelled() {

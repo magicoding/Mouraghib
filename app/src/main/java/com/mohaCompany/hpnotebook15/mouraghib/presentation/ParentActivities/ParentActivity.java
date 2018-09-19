@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib.presentation;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation.ParentActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,25 +15,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mohaCompany.hpnotebook15.mouraghib.R;
+import com.mohaCompany.hpnotebook15.mouraghib.presentation.General.GeneralInfo;
+import com.mohaCompany.hpnotebook15.mouraghib.presentation.General.SocialLife;
+import com.mohaCompany.hpnotebook15.mouraghib.presentation.General.Sugesstion;
 
-public class GeneralInfo extends AppCompatActivity
+public class ParentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_general_info);
+        setContentView(R.layout.activity_parent);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,7 +52,7 @@ public class GeneralInfo extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.general_info, menu);
+        getMenuInflater().inflate(R.menu.parent, menu);
         return true;
     }
 
@@ -83,20 +77,22 @@ public class GeneralInfo extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_parent_notification) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_signIn) {
-            Intent intent = new Intent(this, Private.class);
+            Intent intent = new Intent(this, ParentNotification.class);
             startActivity(intent);
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_general) {
+            Intent intent = new Intent(this, GeneralInfo.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_social_life) {
+            //open social life
+            Intent intent = new Intent(this, SocialLife.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_account) {
+            //open specific child account
+        } else if (id == R.id.nav_parent_suggestion) {
+            Intent intent = new Intent(this, Sugesstion.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

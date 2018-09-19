@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.MainScreen">
+        <activity android:name=".presentation.General.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,43 +22,68 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.StudentLoginActivity"
+            android:name=".presentation.StudentActivities.StudentLoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".presentation.Private"
+            android:name=".presentation.General.Private"
             android:label="Vous etes?" />
         <activity
-            android:name=".presentation.StuffLoginActivit"
+            android:name=".presentation.StuffActivities.StuffLoginActivit"
             android:label="@string/title_activity_stuff_login" />
         <activity
-            android:name=".presentation.ParentLoginActivity"
+            android:name=".presentation.ParentActivities.ParentLoginActivity"
             android:label="@string/title_activity_parent_login" />
         <activity
-            android:name=".presentation.ParentActivity"
+            android:name=".presentation.ParentActivities.ParentActivity"
             android:label="@string/title_activity_parent"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".presentation.StudentActivity"
+            android:name=".presentation.StudentActivities.StudentActivity"
             android:label="@string/title_activity_student"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".presentation.StuffActivity"
+            android:name=".presentation.StuffActivities.StuffActivity"
             android:label="@string/title_activity_stuff"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".presentation.GeneralInfo"
+            android:name=".presentation.General.GeneralInfo"
             android:label="@string/title_activity_general_info"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".presentation.AddAccount"
+            android:name=".presentation.StuffActivities.AddAccount"
             android:label="@string/title_activity_add_account"
             android:theme="@style/AppTheme.NoActionBar" />
-        <service android:name=".MyFirebaseInstanceIdService">
+
+        <service android:name=".BusinessLogic.MyFirebaseInstanceIdService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".presentation.StudentActivities.StudentNotification"
+            android:label="@string/title_activity_notification"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.ParentActivities.ParentNotification"
+            android:label="@string/title_activity_parent_notification"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.StuffActivities.StuffNotification"
+            android:label="@string/title_activity_stuff_notification"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.General.About"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.General.Sugesstion"
+            android:label="@string/title_activity_sugesstion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.General.SocialLife"
+            android:label="@string/title_activity_social_life"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

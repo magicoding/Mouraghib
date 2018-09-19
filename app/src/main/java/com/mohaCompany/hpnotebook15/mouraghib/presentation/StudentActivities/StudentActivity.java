@@ -1,4 +1,4 @@
-package com.mohaCompany.hpnotebook15.mouraghib.presentation;
+package com.mohaCompany.hpnotebook15.mouraghib.presentation.StudentActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,16 +13,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mohaCompany.hpnotebook15.mouraghib.R;
+import com.mohaCompany.hpnotebook15.mouraghib.presentation.General.SocialLife;
+import com.mohaCompany.hpnotebook15.mouraghib.presentation.General.Sugesstion;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StudentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
+
+    private ArrayList<String> arrayList;
+    private ArrayAdapter<String> adapter;
+    private EditText txtInput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +59,6 @@ public class StudentActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -63,6 +67,12 @@ public class StudentActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ListView listView = (ListView)findViewById(R.id.listv);
+        String[] items = {"Francais", "Arab","Mathematique","Physique","IR","sport"};
+        arrayList = new ArrayList<>(Arrays.asList(items));
+        adapter = new ArrayAdapter<String>(this,R.layout.list_item,R.id.textitem,arrayList);
+        listView.setAdapter(adapter);
     }
 
     @Override
@@ -103,19 +113,22 @@ public class StudentActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_student_notification) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            Intent intent = new Intent(this, StudentNotification.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_courses) {
+            Intent intent = new Intent(this, StudentActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_social_life) {
+            Intent intent = new Intent(this, SocialLife.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
-
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_schedule) {
+            //here the student schedule appears
+        } else if (id == R.id.nav_students_suggestions) {
+            Intent intent = new Intent(this, Sugesstion.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
