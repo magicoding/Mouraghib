@@ -63,13 +63,17 @@ public class AddAccount extends AppCompatActivity {
         String accEmail = this.email.getText().toString().trim();
         String studNum = this.studNum.getText().toString().trim();
         String studClass = this.studClass.getText().toString().trim();
-
+        //create yearLevel class
+        //create parents classes
+        //implent error checking
         User teacher = new Stuff(accName,accEmail,2049309013,Integer.parseInt(studNum),"Math");
 
-        HashMap<String,String> dataMap = new HashMap<String, String>();
+        User student = new Student(accName,accEmail,2049309013,Integer.parseInt(studNum),null,null,null);
 
-        dataMap.put(""+teacher.getUserID(),accName  );
-        myRef.child("Stuff").child("teachers").setValue(dataMap);
+        HashMap<String,Object> dataMap = new HashMap<String, Object>();
+
+        dataMap.put(""+student.getUserID(),teacher);
+        myRef.child("Students").child(studClass).updateChildren(dataMap);
 
 
 

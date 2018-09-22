@@ -54,9 +54,14 @@
             android:label="@string/title_activity_add_account"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <service android:name=".BusinessLogic.MyFirebaseInstanceIdService">
+        <service android:name=".BusinessLogic.MyFirebaseIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".BusinessLogic.MyFirebasemessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
